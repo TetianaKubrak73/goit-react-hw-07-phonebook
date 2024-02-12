@@ -2,6 +2,7 @@ import React from 'react';
 import {
   // useSelector,
   useDispatch,
+  useSelector,
 } from 'react-redux';
 import {
   // selectContacts,
@@ -15,6 +16,7 @@ import { deleteContacts } from '../../redux/contacts/contact-operations';
 const ContactList = () => {
   // const contacts = useSelector(selectContacts);
   // const filter = useSelector(selectFilter);
+  const visibleContacts = useSelector(selectVisibleContacts());
   const dispatch = useDispatch();
 
   // Удаление контакта из списка
@@ -23,7 +25,7 @@ const ContactList = () => {
     dispatch(action);
   };
 
-  const visibleContacts = selectVisibleContacts();
+  // const visibleContacts = selectVisibleContacts();
   return (
     <ul className={style.list}>
       {visibleContacts.map(contact => (

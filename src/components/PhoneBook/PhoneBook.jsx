@@ -16,9 +16,7 @@ const PhoneBook = () => {
   return (
     <div className={style.container}>
       <h1>Phonebook</h1>
-
       <ContactForm />
-
       <h2>Contacts</h2>
       {items && items.length > 0 ? (
         <Filter />
@@ -27,7 +25,6 @@ const PhoneBook = () => {
           Your phonebook is empty. Add first contact!
         </div>
       )}
-
       {isLoading && <p>...Loading</p>}
       {error && <p>{error}</p>}
       {items && items.length > 0 && <ContactList />}

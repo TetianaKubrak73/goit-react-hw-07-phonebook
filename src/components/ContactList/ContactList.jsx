@@ -30,7 +30,7 @@ const ContactList = () => {
     <ul className={style.list}>
       {visibleContacts.map(contact => (
         <li key={contact.id}>
-          {contact.name + ' : ' + contact.number}
+          {contact.name + ' : ' + contact.phone}
           <button
             type="button"
             name="delete"

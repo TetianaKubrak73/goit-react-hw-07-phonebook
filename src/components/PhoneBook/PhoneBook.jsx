@@ -8,7 +8,7 @@ import Filter from '../Filter/Filter';
 import style from './PhoneBook.module.css';
 
 const PhoneBook = () => {
-  const { items, isLoading, error } = useSelector(selectContacts);
+  const items = useSelector(selectContacts);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchContacts());
@@ -25,8 +25,8 @@ const PhoneBook = () => {
           Your phonebook is empty. Add first contact!
         </div>
       )}
-      {isLoading && <p>...Loading</p>}
-      {error && <p>{error}</p>}
+      {/* {isLoading && <p>...Loading</p>}
+      {error && <p>{error}</p>} */}
       {items && items.length > 0 && <ContactList />}
     </div>
   );

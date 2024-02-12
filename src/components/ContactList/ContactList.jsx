@@ -16,7 +16,7 @@ import { deleteContacts } from '../../redux/contacts/contact-operations';
 const ContactList = () => {
   // const contacts = useSelector(selectContacts);
   // const filter = useSelector(selectFilter);
-  const visibleContacts = useSelector(selectVisibleContacts());
+  const visibleContacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
   // Удаление контакта из списка

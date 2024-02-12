@@ -1,21 +1,11 @@
 import React from 'react';
-import {
-  // useSelector,
-  useDispatch,
-  useSelector,
-} from 'react-redux';
-import {
-  // selectContacts,
-  // selectFilter,
-  selectVisibleContacts,
-} from '../../redux/selector';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectVisibleContacts } from '../../redux/selector';
 import style from './ContactList.module.css';
 import { deleteContacts } from '../../redux/contacts/contact-operations';
 
 // Компонент списка контактов
 const ContactList = () => {
-  // const contacts = useSelector(selectContacts);
-  // const filter = useSelector(selectFilter);
   const visibleContacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
@@ -25,7 +15,6 @@ const ContactList = () => {
     dispatch(action);
   };
 
-  // const visibleContacts = selectVisibleContacts();
   return (
     <ul className={style.list}>
       {visibleContacts.map(contact => (
